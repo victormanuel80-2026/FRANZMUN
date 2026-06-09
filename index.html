@@ -37,16 +37,55 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content container">
-            <h1>Desarrollo Global <br> <span>Liderazgo Local</span></h1>
-            <p>Bienvenidos a la organización digital de FRANZMUN. Participa, aprende y transforma tu entorno a través del debate y la diplomacia.</p>
-            <div class="hero-buttons">
-                <a href="#noticias" class="btn btn-primary">Ver Noticias</a>
-                <a href="#acerca" class="btn btn-secondary">Conoce Más</a>
+    <!-- Hero Carousel -->
+    <section id="inicio" class="hero-carousel">
+        <div class="carousel-slides">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active" style="background-image: url('images/mun_debate.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content container">
+                    <h1>Desarrollo Global <br> <span>Liderazgo Local</span></h1>
+                    <p>Bienvenidos a la organización digital de FRANZMUN. Participa, aprende y transforma tu entorno a través del debate y la diplomacia.</p>
+                    <div class="hero-buttons">
+                        <a href="#noticias" class="btn btn-primary">Ver Noticias</a>
+                        <a href="#acerca" class="btn btn-secondary btn-light">Conoce Más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide" style="background-image: url('images/mun_assembly.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content container">
+                    <h1>Asamblea General <br> <span>FRANZMUN 2026</span></h1>
+                    <p>Vive la experiencia de representar a una nación y debatir los temas más relevantes de la agenda internacional.</p>
+                    <div class="hero-buttons">
+                        <a href="documentos.html" class="btn btn-primary">Ver Documentos</a>
+                        <a href="#acerca" class="btn btn-secondary btn-light">Conoce Más</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide" style="background-image: url('images/mun_networking.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content container">
+                    <h1>Diplomacia <br> <span>y Networking</span></h1>
+                    <p>Conecta con otros delegados, desarrolla habilidades de liderazgo y construye relaciones internacionales.</p>
+                    <div class="hero-buttons">
+                        <a href="#herramientas" class="btn btn-primary">Herramientas</a>
+                        <a href="#acerca" class="btn btn-secondary btn-light">Conoce Más</a>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+            <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- Carousel Arrows -->
+        <button class="carousel-arrow carousel-prev" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-arrow carousel-next" aria-label="Siguiente">&#10095;</button>
     </section>
 
     <!-- Acerca del MUN -->
