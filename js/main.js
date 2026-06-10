@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
             goToSlide(currentSlide - 1);
         }
 
-        // Auto-play every 5 seconds
+        // Auto-play every 10 seconds
         function startAutoPlay() {
-            autoPlayInterval = setInterval(nextSlide, 5000);
+            autoPlayInterval = setInterval(nextSlide, 10000);
         }
 
         function stopAutoPlay() {
