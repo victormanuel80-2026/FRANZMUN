@@ -496,6 +496,142 @@ ul {
 }
 
 /* =========================================
+   HOMEPAGE DOCUMENTS SECTION
+   ========================================= */
+.docs-home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.doc-home-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 24px rgba(13, 59, 102, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(13, 59, 102, 0.06);
+}
+
+.doc-home-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.doc-home-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(13, 59, 102, 0.15);
+}
+
+.doc-home-card:hover::before {
+    transform: scaleX(1);
+}
+
+.doc-home-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(13, 59, 102, 0.08), rgba(65, 143, 222, 0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.doc-home-card:hover .doc-home-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.doc-home-card h3 {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.doc-home-card > p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.doc-home-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-sm {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+}
+
+.docs-home-cta {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* =========================================
+   VIDEOS GRID SECTION
+   ========================================= */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(13, 59, 102, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--white);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(13, 59, 102, 0.15);
+}
+
+.video-card .video-wrapper {
+    border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+}
+
+.video-info {
+    padding: 1.25rem 1.5rem;
+}
+
+.video-info h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.video-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 .footer {
@@ -549,6 +685,11 @@ ul {
 @media (max-width: 900px) {
     .carousel-content h1 {
         font-size: 3rem;
+    }
+
+    .docs-home-grid,
+    .videos-grid {
+        grid-template-columns: 1fr;
     }
 }
 
