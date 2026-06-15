@@ -123,4 +123,46 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start auto-play
         startAutoPlay();
     }
+
+    // =============================================
+    // MODAL DE RECURSOS
+    // =============================================
+    const recursosBtn = document.getElementById('recursos-btn');
+    const recursosModal = document.getElementById('recursos-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    if (recursosBtn && recursosModal) {
+        function openModal() {
+            recursosModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            recursosModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        recursosBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', closeModal);
+        }
+
+        // Close on clicking overlay background
+        recursosModal.addEventListener('click', (e) => {
+            if (e.target === recursosModal) {
+                closeModal();
+            }
+        });
+
+        // Close on Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && recursosModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
