@@ -156,6 +156,20 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal();
         });
 
+        // Botón Recursos del menú móvil
+        const mobileRecursosBtn = document.getElementById('mobile-recursos-btn');
+        if (mobileRecursosBtn) {
+            mobileRecursosBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Cerrar el menú móvil si está abierto
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                }
+                openModal();
+            });
+        }
+
         if (modalCloseBtn) {
             modalCloseBtn.addEventListener('click', closeModal);
         }

@@ -192,6 +192,11 @@ ul {
     cursor: pointer;
 }
 
+/* Oculto por defecto en escritorio; se muestra solo en móvil (ver media query 768px) */
+.mobile-recursos-item {
+    display: none;
+}
+
 .bar {
     display: block;
     width: 25px;
@@ -722,6 +727,29 @@ ul {
 
     .navbar .btn {
         display: none;
+    }
+
+    /* Recursos item solo en celular (dentro del menú desplegable) */
+    .mobile-recursos-item {
+        display: block !important;
+    }
+
+    .mobile-recursos-item a {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: var(--white) !important;
+        padding: 0.6rem 1.8rem;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color var(--transition-speed);
+    }
+
+    .mobile-recursos-item a:hover {
+        background-color: var(--primary-light);
+    }
+
+    .mobile-recursos-item a::after {
+        display: none !important;
     }
 
     .hero-carousel {
