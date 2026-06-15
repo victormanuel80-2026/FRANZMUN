@@ -133,6 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (recursosBtn && recursosModal) {
         function openModal() {
+            recursosModal.style.display = 'flex';
+            // Force reflow to ensure the transition triggers
+            recursosModal.offsetHeight;
             recursosModal.classList.add('active');
             document.body.classList.add('modal-open');
         }
@@ -140,6 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function closeModal() {
             recursosModal.classList.remove('active');
             document.body.classList.remove('modal-open');
+            // Wait for transition to end before setting display: none
+            setTimeout(() => {
+                if (!recursosModal.classList.contains('active')) {
+                    recursosModal.style.display = 'none';
+                }
+            }, 300); // 300ms matches --transition-speed
         }
 
         recursosBtn.addEventListener('click', (e) => {
