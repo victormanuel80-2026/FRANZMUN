@@ -156,18 +156,23 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal();
         });
 
-        // Botón Recursos del menú móvil
+        // Botón Recursos del menú móvil (button nativo, no interceptado por scroll suave)
         const mobileRecursosBtn = document.getElementById('mobile-recursos-btn');
         if (mobileRecursosBtn) {
-            mobileRecursosBtn.addEventListener('click', (e) => {
+            function handleMobileRecursos(e) {
                 e.preventDefault();
-                // Cerrar el menú móvil si está abierto
+                e.stopPropagation();
+                // Cerrar el menú móvil
                 if (navLinks && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                     if (menuToggle) menuToggle.classList.remove('active');
                 }
                 openModal();
-            });
+            }
+            // touchstart para respuesta inmediata en celular
+            mobileRecursosBtn.addEventListener('touchstart', handleMobileRecursos, { passive: false });
+            // click como respaldo
+            mobileRecursosBtn.addEventListener('click', handleMobileRecursos);
         }
 
         if (modalCloseBtn) {
